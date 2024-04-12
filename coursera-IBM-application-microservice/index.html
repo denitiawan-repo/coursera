@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product and Dealer Selector</title>
+</head>
+<body>
+    <h1>Product price comparison</h1>
+
+    
+    <select id="product">
+        <option value="product1">Headphone</option>
+                       
+    </select>
+	<br/>
+	<br/>
+
+    
+    <select id="dealer">
+        <option value="dealer1">--SELECT--</option>
+		<option value="dealer1">Binglee</option>
+		<option value="dealer1">DXC Electronic</option>
+		<option value="dealer1">Bobay</option>
+		<option value="dealer1">All Dealer</option>
+        
+    </select>
+
+    
+    <ul id="product-list">
+        <!-- Product items will be dynamically added here -->
+    </ul>
+
+    <script>
+        // JavaScript code to fetch product data and populate the list dynamically
+        // You can use AJAX or fetch API to fetch data from a server
+        // Here's a simple example to illustrate the process
+        const productList = document.getElementById('product-list');
+
+        // Sample product data (replace with actual data)
+        const products = [
+            
+            
+        ];
+
+        // Function to populate product list
+        function populateProductList() {
+            // Clear existing items
+            productList.innerHTML = '';
+
+            // Loop through products array and create list items
+            products.forEach(product => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${product.name}: $${product.price}`;
+                productList.appendChild(listItem);
+            });
+        }
+
+        // Call the function to populate product list initially
+        populateProductList();
+    </script>
+</body>
+</html>
