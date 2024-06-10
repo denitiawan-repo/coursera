@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dealer Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: aqua;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            color: black;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .menu {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+        }
+        .menu li {
+            margin: 0 10px;
+        }
+        .menu li a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .logout {
+            padding: 5px 10px;
+            background-color: grey;
+            color: white;
+            border: 1px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .table th {
+            background-color: #f2f2f2;
+        }
+        .detail-form {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        /* Media queries for responsiveness */
+        @media only screen and (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .menu {
+                margin-top: 10px;
+            }
+            .logout {
+                margin-top: 10px;
+            }
+            .table th, .table td {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Dealership</div>
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+		
+<ul class="menu">
+            <li><a href="#">admin</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+        
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Dealer Name</th>
+                <th>City</th>
+                <th>Address</th>
+                <th>Zip</th>
+                <th>
+				
+				  <select class="state-picker" id="statePicker">
+            <option value="" disabled selected>State</option>
+            <option value="AL">Texas</option>
+            <option value="AK">Minnesota</option>            
+			<option value="ML">Mayland</option>
+            <!-- Add more options based on your file -->
+        </select>
+				
+				</th>
+                <th>Review Dealer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><a href="#" onclick="viewDetail(1)">Holdlamis Car Dealership</a></td>
+                <td>El Paso</td>
+                <td>3 Nova Court</td>
+                <td>88563</td>
+                <td>Texas</td>
+                <td><button onclick="reviewDealer(1)">Review</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="#" onclick="viewDetail(2)">Temo Car Dealership</a></td>
+                <td>Minnepolis</td>
+                <td>6337 butternout Crossing</td>
+                <td>55402</td>
+                <td>Minnesota</td>
+                <td><button onclick="reviewDealer(2)">Review</button></td>
+            </tr>
+			
+			<tr>
+                <td>3</td>
+                <td><a href="#" onclick="viewDetail(3)">Regrant Car</a></td>
+                <td>Baltimore</td>
+                <td>93 Golf Course Pass</td>
+                <td>20273</td>
+                <td>Mayland</td>
+                <td><button onclick="reviewDealer(3)">Review</button></td>
+            </tr>
+			
+			<tr>
+                <td>4</td>
+                <td><a href="#" onclick="viewDetail(4)">Treszap Car Dealership</a></td>
+                <td>Baltimore</td>
+                <td>9 Sherman Hill</td>
+                <td>20273</td>
+                <td>Mayland</td>
+                <td><button onclick="reviewDealer(4)">Review</button></td>
+            </tr>
+            <!-- Add more rows as needed with random data -->
+        </tbody>
+    </table>
+
+    <div class="detail-form" id="detailForm">
+        <span class="close-button" onclick="closeDetailForm()">X</span>
+        <h2>Dealer Details</h2>
+        <div id="detailContent"></div>
+    </div>
+
+    <script>
+        function logout() {
+            alert("Logging out the user...");
+            // Add logout functionality here
+        }
+
+        function reviewDealer(id) {
+            alert("Reviewing dealer with ID: " + id);
+            // Add review dealer functionality here
+        }
+
+        function viewDetail(id) {
+            var detailForm = document.getElementById("detailForm");
+            var detailContent = document.getElementById("detailContent");
+            detailContent.innerHTML = `
+                <p>Dealer Name: Dealer ${id}</p>
+                <p>City: City ${id}</p>
+                <p>Address: Address ${id}</p>
+                <p>Zip: Zip ${id}</p>
+                <p>State: State ${id}</p>
+            `;
+            detailForm.style.display = "block";
+        }
+
+        function closeDetailForm() {
+            var detailForm = document.getElementById("detailForm");
+            detailForm.style.display = "none";
+        }
+		
+		
+		   // You can handle state selection using JavaScript here
+        document.getElementById("statePicker").addEventListener("change", function() {
+            var selectedState = this.value;
+            // Do something with the selected state
+            console.log("State:", selectedState);
+        });
+    </script>
+</body>
+</html>

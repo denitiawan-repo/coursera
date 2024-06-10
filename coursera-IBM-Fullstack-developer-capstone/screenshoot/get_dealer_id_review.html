@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix San Car Dealership</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+			
+        }
+		
+		
+		.header {
+            background-color: aqua;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            color: black;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .menu {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+        }
+        .menu li {
+            margin: 0 10px;
+        }
+        .menu li a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .logout {
+            padding: 5px 10px;
+            background-color: grey;
+            color: white;
+            border: 1px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+		
+		
+        .container {
+            max-width:500px;
+            padding: 20px;
+            border-radius: 10px;            			
+        }
+		
+		.card {             
+			
+        }
+        .header2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .address {
+            margin-bottom: 20px;
+        }
+        .panel {
+            
+            border-radius: 10px;
+            padding: 20px;
+			
+            margin-top: 20px;												
+
+			display: flex; /* Change display to flex */
+            align-items: center;			
+			
+        }
+        .panel-content {
+            display: grid;
+			
+			margin-left: 20px;						
+		    max-width:300px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);						
+			text-align: left;												
+        }
+        .emoji {
+            font-size: 36px;
+            margin-right: 20px;
+			padding-bottom:10px;
+        }
+        .review-message {
+            flex: 1;
+			padding-bottom:10px;
+        }
+        .car-model {
+            font-weight: bold;
+			padding-bottom:10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">Dealership</div>
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+		
+<ul class="menu">
+            <li><a href="#">admin</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+        
+    </div>
+	
+	
+  <div class="container">
+        <div class="header2">
+            <div class="title">Fix San Car Dealership</div>
+            <a href="add_review.html" class="button">Write Review</a>
+        </div>
+        <div class="address">San Francisco, California</div>
+        <br/>
+	</div>	
+		
+	<div class="card">
+        <div class="panel">
+            <div class="panel-content">
+                <div class="emoji">😊</div>
+                <div class="review-message">Expanded Global Groupware</div>
+                <div class="car-model">admin, Mazda MX-5, 2003</div>
+            </div>
+						
+			
+        </div>
+		
+</div>		
+	
+ 
+		
+    
+</body>
+</html>

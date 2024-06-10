@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: aqua; /* Tosca color */
+            padding: 10px;
+            text-align: center;
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+        }
+        .menu li {
+            margin: 0 10px;
+        }
+        .menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .input-field {
+            margin-bottom: 10px;
+            width: 100%;
+            max-width: 300px; /* Set the maximum width for the input fields */
+        }
+        .label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 200px; /* Set the maximum width for the buttons */
+        }
+        .button {
+            flex: 1; /* Each button takes half of the available width */
+            padding: 10px;
+            background-color: #ccc; /* Grey background color */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .button:hover {
+            background-color: #999; /* Darker grey on hover */
+        }
+        .link {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="input-field">
+            <label for="username" class="label">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username">
+        </div>
+        <div class="input-field">
+            <label for="password" class="label">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        <div class="button-container">
+            <button class="button" onclick="login()">Login</button>
+            <button class="button" onclick="cancel()">Cancel</button>
+        </div>
+        <div class="link">
+            <a href="register.html">Register</a>
+        </div>
+    </div>
+</body>
+</html>
